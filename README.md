@@ -6,14 +6,14 @@ Made with Express.js
 Handles authentication with GitHub, API requests and database stuff 
 
 ## To run
--
+
 ### install packages
 
 yarn install 
 or
 npm install 
 
-// run the server
+# run the server
 yarn dev
 
 dependencies:
