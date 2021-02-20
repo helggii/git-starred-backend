@@ -1,0 +1,29 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id          Int       @id
+  name        String?
+  image       String?
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime
+  accessToken String
+  Starred     Starred[]
+}
+
+model Starred {
+  stargazers  Int
+  repoName    String
+  repoId      Int    @id
+  ownerId     Int
+  stargazerId Int?
+  ownerImage  String
+  language    String
+  User        User?  @relation(fields: [stargazerId], references: [id])
+}
