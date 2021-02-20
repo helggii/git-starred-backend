@@ -13,7 +13,7 @@ yarn install
 or
 npm install 
 
-# run the server
+## run the server
 yarn dev
 
 dependencies:
